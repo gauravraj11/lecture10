@@ -18,6 +18,7 @@ function App() {
         <Router>
             <div className="App">
                 <Header />
+                <div className='content'>
                 <Routes>
                     <Route path='/' element={<Home />} />
                     <Route path='/home' element={<Home />} />
@@ -25,6 +26,7 @@ function App() {
                     <Route exact path='/about' element={<About />} />
                     <Route exact path='/contact' element={<Contact />} />
                 </Routes>
+                </div>
                 <Footer />
             </div>
         </Router>
