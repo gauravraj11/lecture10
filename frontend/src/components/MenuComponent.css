@@ -1,0 +1,59 @@
+/* Container for the menu */
+.menu-container {
+    padding: 20px;
+}
+
+/* Layout for the menu items */
+.menu-row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+/* Individual menu item styling */
+.menu-item {
+    position: relative;
+    margin: 10px;
+    width: 200px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.menu-item:hover {
+    transform: scale(1.05);
+}
+
+/* Image styling */
+.menu-item-img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* Overlay on the image */
+.menu-item-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    opacity: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    transition: opacity 0.3s ease;
+}
+
+.menu-item:hover .menu-item-overlay {
+    opacity: 1;
+}
+
+/* Title within the overlay */
+.menu-item-title {
+    font-size: 1.2em;
+    text-align: center;
+    padding: 10px;
+}

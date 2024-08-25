@@ -1,25 +1,34 @@
-import logo from './logo.svg';
+import React, { useState } from 'react';
 import './App.css';
 
+import Home from "./components/HomeComponent";
+import About from "./components/AboutComponent";
+import Contact from "./components/ContactComponent";
+import Menu from './components/MenuComponent';
+import Header from './components/HeaderComponent';
+import Footer from './components/FooterComponent';
+
+import { DISHES } from './shared/dishes';
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const [dishes, setDishes] = useState(DISHES);
+    return (
+        <Router>
+            <div className="App">
+                <Header />
+                <Routes>
+                    <Route path='/' element={<Home />} />
+                    <Route path='/home' element={<Home />} />
+                    <Route exact path='/menu' element={<Menu dishes={dishes} />} />
+                    <Route exact path='/about' element={<About />} />
+                    <Route exact path='/contact' element={<Contact />} />
+                </Routes>
+                <Footer />
+            </div>
+        </Router>
+    );
 }
 
 export default App;
